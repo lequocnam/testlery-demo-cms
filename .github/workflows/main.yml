@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: cd /var/www/cms/current && composer install
 
+      - name: Who
+        run: who
+
       - name: Grant access permissions
         run: |
           sudo chown -R www-data.www-data /var/www/cms/current/storage
