@@ -32,4 +32,4 @@ jobs:
       #     chmod -R 775 /var/www/cms/current/storage
 
       - name: Config caching
-        run: cd /var/www/cms/src/current && php artisan config:cache
+        run: cd /var/www/cms/current && php artisan config:cache
