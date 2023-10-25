@@ -14,7 +14,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Make symlink
-        run: ln -s /var/www/cms/src/testlery-demo-cms/testlery-demo-cms /var/www/cms/current
+        run: |
+          ln -s /var/www/cms/src/testlery-demo-cms/testlery-demo-cms /var/www/cms/current
+          ln -s /var/www/cms/shared /var/www/cms/current/
 
       - name: Install dependencies
         run: cd /var/www/cms/src/current && composer install
