@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          set-safe-directory: "/var/www/cms/src"
+          set-safe-directory: "/var/www/cms/src/"
 
       - name: Make symlink
         run: ln -s /var/www/cms/src/testlery-demo-cms/testlery-demo-cms /var/www/cms/current
