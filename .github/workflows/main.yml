@@ -17,6 +17,8 @@ jobs:
         run: |
           ln -s /var/www/cms/src/testlery-demo-cms/testlery-demo-cms /var/www/cms/current
           ln -s /var/www/cms/shared/.env /var/www/cms/current/
+          rm -rf /var/www/cms/current/storage
+          ln -s /var/www/cms/shared/storage /var/www/cms/current/storage
 
       - name: Install dependencies
         run: cd /var/www/cms/current && composer install
