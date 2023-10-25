@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          set-safe-directory: "/var/www/cms"
+          path: "/var/www/cms"
 
       - name: Install dependencies
         uses: php-actions/composer@v6
