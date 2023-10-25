@@ -12,16 +12,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          set-safe-directory: "/var/www/cms/src/"
 
       - name: Make symlink
         run: ln -s /var/www/cms/src/testlery-demo-cms/testlery-demo-cms /var/www/cms/current
 
       - name: Install dependencies
-        uses: php-actions/composer@v6
-        with:
-          command: cd current && composer install
+        run: cd /var/www/cms/src/current && composer install
       
 
       
