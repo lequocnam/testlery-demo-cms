@@ -13,6 +13,10 @@ jobs:
       - name: Checkout
         uses: action/checkout@v4
 
+      - name: Install dependencies
+        uses: php-actions/composer@v6
+        with:
+          command: composer install
       
 
       
