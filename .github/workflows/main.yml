@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          path: "/var/www/cms"
+          GITHUB_WORKSPACE: "/var/www/cms"
 
       - name: Install dependencies
         uses: php-actions/composer@v6
