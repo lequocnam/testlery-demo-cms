@@ -19,18 +19,17 @@ jobs:
           ln -s /var/www/cms/shared/.env /var/www/cms/current/
           rm -rf /var/www/cms/current/storage
           ln -s /var/www/cms/shared/storage /var/www/cms/current/storage
+          rm -rf /var/www/cms/current/bootstrap
+          ln -s /var/www/cms/shared/bootstrap /var/www/cms/current/bootstrap
 
       - name: Install dependencies
         run: cd /var/www/cms/current && composer install
 
-      - name: Who
-        run: who
-
-      - name: Grant access permissions
-        run: |
-          sudo chown -R www-data.www-data /var/www/cms/current/storage
-          sudo chown -R www-data.www-data /var/www/cms/current/bootstrap/cache
-          chmod -R 775 /var/www/cms/current/storage
+      # - name: Grant access permissions
+      #   run: |
+      #     sudo chown -R www-data.www-data /var/www/cms/current/storage
+      #     sudo chown -R www-data.www-data /var/www/cms/current/bootstrap/cache
+      #     chmod -R 775 /var/www/cms/current/storage
 
       - name: Config caching
         run: cd /var/www/cms/src/current && php artisan config:cache
