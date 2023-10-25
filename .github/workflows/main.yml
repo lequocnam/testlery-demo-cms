@@ -3,7 +3,7 @@ name: testlery cms CI
 on:
   push:
     branches:
-      - develop
+      - master
 
 jobs:
   deploy:
